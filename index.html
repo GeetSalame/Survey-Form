@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+        :root {
+            --white: #f3f3f3;
+            --darkblue: #1b1b32;
+            --darkblue-alpha: rgba(52, 52, 136, 0.8);
+            --green: #37af65;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: var(--darkblue);
+            background-image: linear-gradient(180deg, rgba(58, 58, 158, 0.8), rgba(136, 206, 145, 0.7)), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+	    background-size : cover;
+        }
+
+        h1 {
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
+        h1,
+        p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        h1:hover{
+            transform: scale(1.1);
+        }
+
+        label {
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-bottom: 0;
+            margin-top: 1rem;
+            /* margin-left: 0.5em; */
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0,0,0, 0.5);
+        }
+
+        button {
+            border: none;
+        }
+
+        .container {
+            width: 100%;
+            margin: 3.125rem auto 0 auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        header {
+            padding: 0 0.625rem;
+            /* border: solid 2px red; */
+            /* box-shadow: 10px 10px 1px rgb(81, 132, 228); */
+            /* text-shadow: 1px 1px 1px rgba(255, 0, 0, 1); */
+        }
+
+        #description {
+            font-style: italic;
+            /* font-weight: bold; */
+            margin-bottom: 1rem;
+        }
+
+        form {
+            background: var(--darkblue-alpha);
+            padding: 2.5rem 2.625rem;
+            border-radius: 0.25rem;
+            box-shadow: 2px 2px 50px rgba(0,0,0, 0.5);
+            margin-bottom: 2em;
+        }
+
+        input{width: 95%;}
+        textarea{width: 95%;}
+        button{width: 95%; 
+            margin: 2em 0;
+            box-shadow: 2px 2px 20px rgba(0,0,0, 1);
+            /* background-color: yellow; */
+        }
+        button:hover{
+            color: white;
+            background-color: var(--darkblue);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header" style="text-align: center;">
+            <h1 style="text-decoration: underline; text-shadow: 2px 2px 20px rgb(165, 164, 255);">
+                A Project of Survey Form
+            </h1>
+            <p id="description"><span>jyale form bharacha aahe bhara</span></p>
+        </header>
+
+        <form action="action.php">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter your Name" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Enter youe Email" id="" required>
+            </div>
+            <div>
+                <label for="age">Age <span> &nbsp; (optional)</span></label>
+                <input type="number" min="10" max="90" name="age" placeholder="Enter your Age" id="">
+            </div>
+            <div>
+                <label for="sex">Sex</label>
+                <select name="Sex" id="" required>
+                    <option disabled selected value>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="preferno">Prefer Not to say</option>
+                    <option value="hmm">krwado yar</option>
+                </select>
+            </div>
+            <div>
+                <label for="relationship" style="margin-bottom: 0.3rem;">Relationship status</label>
+                <input type="radio" name="choice" id="" style="width: inherit;"> <label for="married" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Married</label> <br>
+                <input type="radio" name="choice" id="" style="width: inherit;"> <label for="Single" style="display: inline; font-size: inherit; color: rgb(214, 214, 214)">Single aaho ;(</label> <br>
+                <input type="radio" name="choice" id="" style="width: inherit;"> <label for="relationship" style="display: inline; font-size: inherit; color: rgb(214, 214, 214)">In a Relationship</label> <br>
+            </div>
+            <div>
+                <label for="hobbies" style="margin-bottom: 0.3rem;">Hobbies</label>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="sing" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Singing</label> <br>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="dance" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Dancing</label> <br>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="code" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Coding</label> <br>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="camp" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Camping</label> <br>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="nalla" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">Nalla pdun rahne</label> <br>
+                <input type="checkbox" name="hobby" id="" style="width: inherit;"> <label for="other" style="display: inline; font-size: inherit; color: rgb(214, 214, 214);">other</label> <br>
+                <input type="text" placeholder="Specify other hobbies" name="" id="" style="">
+            </div>
+            <div>
+                <label for="">Are you Vaccinated ?</label>
+                <input type="radio" name="vaccine" id="" style="width: inherit;"> <label for="" style="display: inline;">Yes</label> <br>
+                <input type="radio" name="vaccine" id="" style="width: inherit;"> <label for="" style="display: inline;">Partially</label> <br>
+                <input type="radio" name="vaccine" id="" style="width: inherit;"> <label for="" style="display: inline;">No</label> <br>
+                <label for="">If Yes/Partially, then attach your vaccine certificate here</label>
+                <input type="file" name="" id="choosefile" style="color: white; margin-top: 0.5em;">
+            </div>
+            <div>
+                <label for="">Any Suggestions</label>
+                <textarea name="suggestion" id="" cols="30" rows="5" placeholder= "Write your suggestion here.."></textarea>
+            </div>
+            <div>
+                <button id="btn" type="submit" onclick=Submission();>Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        function Submission(){
+            let btn  = document.getElementById('btn');
+            alert("Form Submitted Successfully!");
+        }
+    </script>
+
+</body>
+
+</html>
